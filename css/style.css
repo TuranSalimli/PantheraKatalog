@@ -6,7 +6,7 @@
 }
 
 body {
-  background: #f8f6f2;
+  background: rgb(255, 251, 232);
   color: #222;
   line-height: 1.6;
 }
@@ -24,7 +24,7 @@ a {
 
 /* Header */
 header {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 251, 232);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #ddd;
   position: sticky;
@@ -51,6 +51,12 @@ header {
   font-style: italic;
 }
 
+.logo img {
+  height: 70px;
+  width: auto;
+  display: block;
+}
+
 .nav-links {
   display: flex;
   gap: 30px;
@@ -69,15 +75,14 @@ header {
   color: #8b6f47;
 }
 
-/* Hero */
+
 .hero {
-  min-height: 90vh;
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
-  background:
-    linear-gradient(rgba(20, 20, 20, 0.35), rgba(20, 20, 20, 0.35)),
-    url('../images/IMG_1831.PNG') center/cover no-repeat;
-  color: white;
+  background: url('../images/IMG_4051.PNG') center/cover no-repeat;
+  background-position: center;
 }
 
 .hero-content {
@@ -110,7 +115,7 @@ header {
   display: inline-block;
   padding: 14px 32px;
   background: #8b6f47;
-  color: white;
+  color: rgb(255, 251, 232);
   border: 1px solid #8b6f47;
   font-size: 14px;
   letter-spacing: 1px;
@@ -155,12 +160,7 @@ header {
 }
 
 .card {
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  transition: 0.35s;
-  border: 1px solid #eee;
+  background: rgb(255, 251, 232);
 }
 
 .card:hover {
@@ -240,7 +240,7 @@ header {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.85);
+ background: rgba(255, 251, 232);
   color: #2d2a26;
   border: none;
   font-size: 42px;
@@ -260,7 +260,7 @@ header {
 }
 
 .slider-btn:hover {
-  background: white;
+  background: rgb(255, 251, 232);
 }
 
 @media (max-width: 600px) {
@@ -281,7 +281,7 @@ header {
 /* Premium highlight */
 .premium-banner {
   background: #2d2a26;
-  color: white;
+  color: rgb(255, 251, 232);
   text-align: center;
   padding: 80px 20px;
 }
@@ -321,7 +321,7 @@ footer {
 
 .footer-box h3 {
   margin-bottom: 14px;
-  color: white;
+   color: rgb(255, 251, 232);
   font-size: 20px;
 }
 
@@ -373,4 +373,62 @@ footer {
   .section-title h2 {
     font-size: 30px;
   }
+}
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: url('../images/IMG_4051.PNG') center/contain no-repeat;
+    background-color: rgb(255, 251, 232);
+    padding: 20px;
+  }
+}
+.hero {
+  position: relative;
+}
+.scroll-down {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  border: 2px solid #8b6f47;
+
+  color: #8b6f47;
+  font-size: 28px;
+  text-decoration: none;
+
+  animation: bounce 1.5s infinite;
+  cursor: pointer;
+
+  background: rgba(255, 251, 232, 0.2);
+  backdrop-filter: blur(6px);
+}
+.scroll-down {
+  text-shadow: 0 0 10px rgba(139, 111, 71, 0.4);
+}
+.scroll-down:hover {
+  transform: translateX(-50%) scale(1.1);
+  background: #8b6f47;
+  color: rgb(255, 251, 232);
+
+}
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(12px); }
+}
+html {
+  scroll-behavior: smooth;
 }
