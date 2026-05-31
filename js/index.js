@@ -127,16 +127,11 @@ categoryCards.forEach(card => {
       renderFlowers(filtered);
     }
 
-    const catalog = document.getElementById("catalog");
-
-function scrollToCatalog() {
-  const yOffset = -80; // header üçün
-  const y = catalog.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-  window.scrollTo({
-    top: y,
-    behavior: "smooth"
+ setTimeout(() => {
+  document.getElementById("catalogGrid").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
   });
-}
+}, 50);
   });
 });
