@@ -1,62 +1,70 @@
 
 const flowers = [
-    {
-        id: 1,
-        name: "Royal Rose",
-        price: "₼85",
-        image: "images/IMG_1795.JPG.jpeg",
-        subImages: [
-            "images/IMG_1795.JPG.jpeg",
-           
-        ]
-    },
-    {
-        id: 2,
-        name: "White Elegance",
-        price: "₼95",
-        image: "images/IMG_1804.JPG.jpeg",
-        subImages: [
-            "images/IMG_1804.JPG.jpeg",
-         
-        ]
-    },
-    {
-        id: 3,
-        name: "Golden Blossom",
-        price: "₼110",
-        image: "images/IMG_1832.PNG",
-        subImages: [
-            "images/IMG_1832.PNG",
-            "images/IMG_1831.PNG",
-        ]
-    },
-    {
-        id: 4,
-        name: "Golden Blossom",
-        price: "₼110",
-        image: "images/IMG_2158.JPG.jpeg",
-        subImages: [
-            "images/IMG_2158.JPG.jpeg",
-            "images/IMG_2163.JPG.jpeg"
-        ]
-    }
+   {
+    id: 1,
+    name: "Lonely",
+    price: "₼120",
+    category: "buket",
+    image: "images/Lonely.png",
+    subImages: ["images/Lonely.png"]
+},
+{
+    id: 2,
+    name: "Pink Dance",
+    price: "₼110",
+    category: "buket",
+    image: "images/Pink dance.png",
+    subImages: ["images/Pink dance.png"]
+},
+{
+    id: 3,
+    name: "Red Dream",
+    price: "₼110",
+    category: "buket",
+    image: "images/Red Dream.png",
+    subImages: ["images/Red Dream.png"]
+},
+{
+    id: 4,
+    name: "Paeony Utopia",
+    price: "₼110",
+    category: "buket",
+    image: "images/Paeony Utopia.png",
+    subImages: ["images/Paeony Utopia.png"]
+},
+{
+    id: 5,
+    name: "Silent",
+    price: "₼180",
+    category: "kompozisiya",
+    image: "images/Silent.png",
+    subImages: ["images/Silent.png"]
+},
+{
+    id: 6,
+    name: "Time to Fall",
+    price: "₼200",
+    category: "kompozisiya",
+    image: "images/Time to Fall.png",
+    subImages: ["images/Time to Fall.png"]
+}
 ];
 
 const grid = document.getElementById("catalogGrid");
 
-grid.innerHTML = flowers
-    .map(flower => `
+function renderFlowers(data) {
+  grid.innerHTML = data.map(flower => `
     <div class="card" data-id="${flower.id}">
       <img src="${flower.image}" alt="${flower.name}">
       <div class="card-content">
         <h3>${flower.name}</h3>
         <div class="price">${flower.price}</div>
-        <a href="#" class="order-btn">Ətraflı bax</a>
       </div>
     </div>
-  `)
-    .join("");
+  `).join("");
+}
 
+renderFlowers(flowers);
 
 let currentFlowerImages = [];
 let currentIndex = 0;
@@ -65,16 +73,12 @@ const modal = document.createElement("div");
 modal.className = "image-modal";
 
 modal.innerHTML = `
-  <button class="slider-btn prev-btn">&#10094;</button>
   <img class="modal-img" src="" alt="">
-  <button class="slider-btn next-btn">&#10095;</button>
 `;
 
 document.body.appendChild(modal);
 
 const modalImage = modal.querySelector(".modal-img");
-const prevBtn = modal.querySelector(".prev-btn");
-const nextBtn = modal.querySelector(".next-btn");
 
 function openModal(flower) {
     currentFlowerImages = flower.subImages && flower.subImages.length > 0
@@ -101,18 +105,38 @@ grid.addEventListener("click", (e) => {
 
     openModal(flower);
 });
-nextBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    showImage(currentIndex + 1);
-});
-
-prevBtn.addEventListener("click", (e) => {
-    e.stopPropagation();
-    showImage(currentIndex - 1);
-});
 
 modal.addEventListener("click", (e) => {
     if (e.target === modal) {
         modal.classList.remove("active");
     }
+});
+const categoryCards = document.querySelectorAll(".category-card");
+
+categoryCards.forEach(card => {
+  card.addEventListener("click", () => {
+
+    const category = card.dataset.category;
+
+    if (category === "all") {
+      renderFlowers(flowers);
+    } else {
+      const filtered = flowers.filter(
+        f => f.category === category
+      );
+      renderFlowers(filtered);
+    }
+
+    const catalog = document.getElementById("catalog");
+
+function scrollToCatalog() {
+  const yOffset = -80; // header üçün
+  const y = catalog.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+  window.scrollTo({
+    top: y,
+    behavior: "smooth"
+  });
+}
+  });
 });
