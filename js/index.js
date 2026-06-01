@@ -47,7 +47,103 @@ const flowers = [
     category: "kompozisiya",
     image: "images/Time to Fall.png",
     subImages: ["images/Time to Fall.png"]
-}
+},
+{
+    id: 7,
+    name: "Bouquet",
+    price: "₼200",
+    category: "buket",
+    image: "images/Bouquet 002.jpg.jpeg",
+    subImages: ["images/Bouquet 002.jpg.jpeg"]
+},
+{
+    id: 8,
+    name: "Electric Silver",
+    price: "₼200",
+    category: "buket",
+    image: "images/Electric Silver.jpg.jpeg",
+    subImages: ["images/Electric Silver.jpg.jpeg"]
+},
+{
+    id: 9,
+    name: "Far Away",
+    price: "₼200",
+    category: "kompozisiya",
+    image: "images/Far Away.jpg.jpeg",
+    subImages: ["images/Far Away.jpg.jpeg"]
+},
+{
+    id: 10,
+    name: "Just Happy",
+    price: "₼200",
+    category: "buket",
+    image: "images/Just Happy.jpg.jpeg",
+    subImages: ["images/Just Happy.jpg.jpeg"]
+},
+{
+    id: 11,
+    name: "Pink Wave",
+    price: "₼200",
+    category: "kompozisiya",
+    image: "images/Pink Wave.jpg.jpeg",
+    subImages: ["images/Pink Wave.jpg.jpeg"]
+},
+{
+    id: 12,
+    name: "Silver Light",
+    price: "₼200",
+    category: "buket",
+    image: "images/Silver Light.jpg.jpeg",
+    subImages: ["images/Silver Light.jpg.jpeg"]
+},
+{
+    id: 13,
+    name: "Yellow Love",
+    price: "₼200",
+    category: "kompozisiya",
+    image: "images/Yellow Love.jpg.jpeg",
+    subImages: ["images/Yellow Love.jpg.jpeg"]
+},
+{
+    id: 14,
+    name: "Mix Bouquet",
+    price: "₼200",
+    category: "buket",
+    image: "images/Mix Bouquet.png",
+    subImages: ["images/Mix Bouquet.png"]
+},
+{
+    id: 15,
+    name: "Jasmin",
+    price: "₼200",
+    category: "buket",
+    image: "images/Jasmin.png",
+    subImages: ["images/Jasmin.png"]
+},
+{
+    id: 16,
+    name: "Jasmin Wave",
+    price: "₼200",
+    category: "buket",
+    image: "images/Jasmin Wave.png",
+    subImages: ["images/Jasmin Wave.png"]
+},
+/*{
+    id: 17,
+    name: "Time to Fall",
+    price: "₼200",
+    category: "kompozisiya",
+    image: "images/Time to Fall.png",
+    subImages: ["images/Time to Fall.png"]
+},
+{
+    id: 18,
+    name: "Time to Fall",
+    price: "₼200",
+    category: "kompozisiya",
+    image: "images/Time to Fall.png",
+    subImages: ["images/Time to Fall.png"]
+}*/
 ];
 
 const grid = document.getElementById("catalogGrid");
